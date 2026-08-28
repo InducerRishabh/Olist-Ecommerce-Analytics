@@ -6,14 +6,6 @@ The project focuses on **sales performance, customer behavior, product categorie
 
 ---
 
-## Dashboard Preview
-
-![Olist E-Commerce Dashboard](./screenshots/dashboard_overview.png)
-
-The interactive dashboard combines business KPIs, revenue trends, category performance, delivery analytics, customer retention, payment analysis, and customer lifetime value.
-
----
-
 ## Business Questions
 
 This project answers the following business questions:
