@@ -1,258 +1,146 @@
-\# Olist E-Commerce Sales \& Customer Analytics
+# Olist E-Commerce Sales & Customer Analytics
 
-
-
-\## Project Overview
-
-
+## Project Overview
 
 This project analyzes the Olist Brazilian E-Commerce dataset to understand sales performance, customer behavior, product performance, and delivery operations.
 
-
-
 The objective is to transform raw e-commerce data into actionable business insights using SQL, Python, DuckDB, and an interactive Streamlit dashboard.
 
+## Business Questions
 
+- How is revenue changing over time?
+- Which product categories generate the most revenue?
+- What is the average order value?
+- What percentage of customers make repeat purchases?
+- How does delivery performance vary across regions?
+- Does late delivery have an impact on customer review scores?
+- Which customer segments contribute the most revenue?
+- Which payment methods are most commonly used?
 
-\## Business Questions
-
-
-
-\- How is revenue changing over time?
-
-\- Which product categories generate the most revenue?
-
-\- What is the average order value?
-
-\- What percentage of customers make repeat purchases?
-
-\- How does delivery performance vary across regions?
-
-\- Does late delivery have an impact on customer review scores?
-
-\- Which customer segments contribute the most revenue?
-
-\- Which payment methods are most commonly used?
-
-
-
-\## Dataset
-
-
+## Dataset
 
 The analysis uses the Olist Brazilian E-Commerce dataset containing information about:
 
-
-
-\- Orders
-
-\- Customers
-
-\- Products
-
-\- Sellers
-
-\- Payments
-
-\- Reviews
-
-\- Geolocation
-
-\- Product categories
-
-
+- Orders
+- Customers
+- Products
+- Sellers
+- Payments
+- Reviews
+- Geolocation
+- Product categories
 
 The dataset contains approximately 100K orders across multiple related tables.
 
+## Tools & Technologies
 
+- Python
+- SQL
+- DuckDB
+- Pandas
+- Streamlit
+- Plotly
+- Jupyter Notebook
 
-\## Tools \& Technologies
+## Analysis Performed
 
-
-
-\- Python
-
-\- SQL
-
-\- DuckDB
-
-\- Pandas
-
-\- Streamlit
-
-\- Plotly
-
-\- Jupyter Notebook
-
-
-
-\## Analysis Performed
-
-
-
-\### Sales Analysis
-
-
+### 1. Sales Analysis
 
 Analyzed:
 
+- Total revenue
+- Total orders
+- Average Order Value (AOV)
+- Monthly revenue
+- Month-over-month growth
+- Product category performance
 
-
-\- Total revenue
-
-\- Total orders
-
-\- Average Order Value (AOV)
-
-\- Monthly revenue
-
-\- Month-over-month growth
-
-\- Product category performance
-
-
-
-\### Customer Analysis
-
-
+### 2. Customer Analysis
 
 Analyzed:
 
+- Total customers
+- Repeat purchase rate
+- Customer lifetime value
+- Customer segmentation
+- Monthly cohort retention
 
-
-\- Total customers
-
-\- Repeat purchase rate
-
-\- Customer lifetime value
-
-\- Customer segments
-
-\- Cohort retention
-
-
-
-\### Delivery Analysis
-
-
+### 3. Delivery Analysis
 
 Analyzed:
 
+- Average delivery time
+- Late delivery rate
+- Regional delivery performance
+- Relationship between delivery status and review scores
 
-
-\- Average delivery time
-
-\- Late delivery rate
-
-\- Regional delivery performance
-
-\- Relationship between delivery status and review scores
-
-
-
-\### Payment Analysis
-
-
+### 4. Payment Analysis
 
 Analyzed:
 
+- Payment method distribution
+- Revenue by payment type
+- Average number of installments
 
+## Key SQL Concepts
 
-\- Payment method distribution
+The project demonstrates practical SQL techniques including:
 
-\- Revenue by payment type
+- INNER JOIN
+- LEFT JOIN
+- Common Table Expressions (CTEs)
+- GROUP BY
+- CASE WHEN
+- HAVING
+- DATE_TRUNC
+- DATE_DIFF
+- LAG
+- Window Functions
+- Aggregations
 
-\- Average number of installments
+## Key Findings
 
+Some notable findings from the analysis include:
 
+- Total revenue analyzed was approximately **R$15.4M** across **96K+ delivered orders**.
+- The average order value was approximately **R$159.86**.
+- The overall repeat purchase rate was approximately **3.0%**, indicating that most customers made a single purchase.
+- On-time orders had a substantially higher average review score than late orders.
+- Delivery performance varies significantly across Brazilian states.
+- Revenue contribution differs considerably across product categories.
+- Customer segments show meaningful differences in average customer spending and total revenue contribution.
 
-\## Key SQL Concepts
+## Dashboard
 
+The project includes an interactive Streamlit dashboard covering:
 
+- Revenue KPIs
+- Monthly revenue trends
+- Month-over-month growth
+- Top product categories
+- Delivery performance
+- Regional fulfillment
+- Cohort retention
+- Payment methods
+- Customer lifetime value
+- Category-based product exploration
 
-\- INNER JOIN
+### Dashboard Preview
 
-\- LEFT JOIN
+![Olist E-Commerce Dashboard](./screenshots/dashboard.png)
 
-\- CTEs
-
-\- GROUP BY
-
-\- CASE WHEN
-
-\- HAVING
-
-\- DATE\_TRUNC
-
-\- DATE\_DIFF
-
-\- LAG
-
-\- Window Functions
-
-\- Aggregations
-
-
-
-\## Key Insights
-
-
-
-The analysis highlights differences in:
-
-
-
-\- Revenue contribution across product categories
-
-\- Customer repeat-purchase behavior
-
-\- Delivery performance across regions
-
-\- Customer satisfaction between on-time and late deliveries
-
-\- Revenue contribution from different customer segments
-
-
-
-\## Dashboard
-
-
-
-The project includes an interactive Streamlit dashboard for exploring sales, customer, product, payment, and delivery metrics.
-
-
-
-!\[Dashboard](./screenshots/dashboard.png)
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
 Olist-Ecommerce-Analytics/
-
 │
-
 ├── analysis.ipynb
-
 ├── app.py
-
 ├── db.py
-
-├── download\_data.py
-
-├── load\_to\_duckdb.py
-
+├── download_data.py
+├── load_to_duckdb.py
 ├── queries.sql
-
 ├── README.md
-
 │
-
 └── screenshots/
-
-&#x20;   └── dashboard.png
-
+    └── dashboard.png
