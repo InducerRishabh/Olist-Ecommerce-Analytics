@@ -1,146 +1,222 @@
 # Olist E-Commerce Sales & Customer Analytics
 
-## Project Overview
+An end-to-end data analytics project analyzing the Olist Brazilian E-Commerce dataset using SQL, DuckDB, Python, and Streamlit.
 
-This project analyzes the Olist Brazilian E-Commerce dataset to understand sales performance, customer behavior, product performance, and delivery operations.
+The project focuses on **sales performance, customer behavior, product categories, delivery operations, payment methods, and customer retention**.
 
-The objective is to transform raw e-commerce data into actionable business insights using SQL, Python, DuckDB, and an interactive Streamlit dashboard.
+---
+
+## Dashboard Preview
+
+![Olist E-Commerce Dashboard](./screenshots/dashboard_overview.png)
+
+The interactive dashboard combines business KPIs, revenue trends, category performance, delivery analytics, customer retention, payment analysis, and customer lifetime value.
+
+---
 
 ## Business Questions
+
+This project answers the following business questions:
 
 - How is revenue changing over time?
 - Which product categories generate the most revenue?
 - What is the average order value?
-- What percentage of customers make repeat purchases?
-- How does delivery performance vary across regions?
-- Does late delivery have an impact on customer review scores?
-- Which customer segments contribute the most revenue?
-- Which payment methods are most commonly used?
+- How frequently do customers make repeat purchases?
+- Which customer segments generate the most revenue?
+- How does delivery performance vary across Brazilian states?
+- Does late delivery affect customer review scores?
+- Which payment methods generate the most revenue?
+- How does customer retention change across monthly cohorts?
+- Which customers have the highest lifetime value?
 
-## Dataset
+---
 
-The analysis uses the Olist Brazilian E-Commerce dataset containing information about:
+## Key Performance Indicators
 
-- Orders
-- Customers
-- Products
-- Sellers
-- Payments
-- Reviews
-- Geolocation
-- Product categories
+| KPI | Result |
+|---|---:|
+| Total Revenue | R$ 15.42M |
+| Delivered Orders | 96,477 |
+| Average Order Value | R$ 159.86 |
+| Repeat Purchase Rate | 3.0% |
+| Average Delivery Time | 12.5 days |
+| Late Delivery Rate | 8.11% |
 
-The dataset contains approximately 100K orders across multiple related tables.
+---
 
-## Tools & Technologies
+## Key Insights
 
-- Python
-- SQL
-- DuckDB
-- Pandas
-- Streamlit
-- Plotly
-- Jupyter Notebook
+### Sales Performance
 
-## Analysis Performed
+Revenue increased substantially throughout 2017, reaching monthly revenue above **R$1M** during several periods in late 2017 and 2018.
 
-### 1. Sales Analysis
+The dashboard tracks both monthly revenue and month-over-month growth to identify changes in sales momentum.
 
-Analyzed:
+### Customer Behavior
 
-- Total revenue
-- Total orders
-- Average Order Value (AOV)
-- Monthly revenue
-- Month-over-month growth
-- Product category performance
+The majority of customers are one-time purchasers.
 
-### 2. Customer Analysis
+The analysis identifies:
 
-Analyzed:
-
-- Total customers
-- Repeat purchase rate
+- One-time customers
+- Repeat customers
+- Loyal customers
 - Customer lifetime value
-- Customer segmentation
 - Monthly cohort retention
 
-### 3. Delivery Analysis
+This highlights a significant opportunity for improving customer retention and repeat purchasing.
 
-Analyzed:
+### Delivery Performance
 
-- Average delivery time
-- Late delivery rate
-- Regional delivery performance
-- Relationship between delivery status and review scores
+Delivery performance varies considerably across Brazilian states.
 
-### 4. Payment Analysis
+The analysis also compares delivery status with customer review scores:
 
-Analyzed:
+| Delivery Status | Orders | Avg. Review Score |
+|---|---:|---:|
+| On Time | 88,644 | 4.29 |
+| Late | 7,826 | 2.57 |
 
-- Payment method distribution
-- Revenue by payment type
-- Average number of installments
+Late deliveries are associated with substantially lower customer review scores, indicating that logistics performance is an important driver of customer satisfaction.
 
-## Key SQL Concepts
+### Product Categories
 
-The project demonstrates practical SQL techniques including:
+Revenue is concentrated among a smaller group of product categories.
 
-- INNER JOIN
-- LEFT JOIN
-- Common Table Expressions (CTEs)
-- GROUP BY
-- CASE WHEN
-- HAVING
-- DATE_TRUNC
-- DATE_DIFF
-- LAG
-- Window Functions
-- Aggregations
+The dashboard ranks the top categories by revenue to identify the strongest contributors to overall sales.
 
-## Key Findings
+### Payments
 
-Some notable findings from the analysis include:
+Payment behavior is analyzed by:
 
-- Total revenue analyzed was approximately **R$15.4M** across **96K+ delivered orders**.
-- The average order value was approximately **R$159.86**.
-- The overall repeat purchase rate was approximately **3.0%**, indicating that most customers made a single purchase.
-- On-time orders had a substantially higher average review score than late orders.
-- Delivery performance varies significantly across Brazilian states.
-- Revenue contribution differs considerably across product categories.
-- Customer segments show meaningful differences in average customer spending and total revenue contribution.
+- Payment type
+- Revenue contribution
+- Installments
+- Transaction volume
+
+---
 
 ## Dashboard
 
-The project includes an interactive Streamlit dashboard covering:
+The Streamlit dashboard provides interactive analysis across multiple business areas.
 
-- Revenue KPIs
-- Monthly revenue trends
+### Sales & Growth
+
+![Sales Growth](./screenshots/sales_growth.png)
+
+### Product Category Analysis
+
+![Category Analysis](./screenshots/category_analysis.png)
+
+### Delivery Performance
+
+![Delivery Performance](./screenshots/delivery_performance.png)
+
+### Customer Cohort Retention
+
+![Cohort Retention](./screenshots/cohort_retention.png)
+
+### Payment Analysis
+
+![Payment Analysis](./screenshots/payment_analysis.png)
+
+### Customer Analysis
+
+![Customer Analysis](./screenshots/customer_analysis.png)
+
+---
+
+## Data Analysis
+
+The project contains SQL queries covering:
+
+### Sales Analysis
+
+- Total revenue
+- Order volume
+- Average order value
+- Monthly revenue
 - Month-over-month growth
-- Top product categories
-- Delivery performance
-- Regional fulfillment
-- Cohort retention
-- Payment methods
+- Category revenue
+
+### Customer Analysis
+
+- Customer segmentation
+- Repeat purchase rate
 - Customer lifetime value
-- Category-based product exploration
+- Cohort retention
+- Top customers
 
-### Dashboard Preview
+### Logistics Analysis
 
-![Olist E-Commerce Dashboard](./screenshots/dashboard.png)
+- Average delivery time
+- Late delivery rate
+- Delivery performance by state
+- Delivery status vs. review score
 
-## Project Structure
+### Payment Analysis
+
+- Payment type distribution
+- Revenue by payment method
+- Installment analysis
+
+---
+
+## SQL Concepts Used
+
+The project demonstrates practical SQL analytics techniques including:
+
+- `INNER JOIN`
+- `LEFT JOIN`
+- Common Table Expressions (`CTEs`)
+- `GROUP BY`
+- `CASE WHEN`
+- `HAVING`
+- `DATE_TRUNC`
+- `DATE_DIFF`
+- `LAG`
+- Window Functions
+- Aggregations
+- Conditional calculations
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Data analysis and application logic |
+| SQL | Business analysis and transformations |
+| DuckDB | Analytical database |
+| Pandas | Data manipulation |
+| Plotly | Interactive visualizations |
+| Streamlit | Interactive dashboard |
+| Jupyter Notebook | Exploratory analysis |
+| Git & GitHub | Version control |
+
+---
+
+## Project Architecture
 
 ```text
-Olist-Ecommerce-Analytics/
-│
-├── analysis.ipynb
-├── app.py
-├── db.py
-├── download_data.py
-├── load_to_duckdb.py
-├── queries.sql
-├── README.md
-│
-└── screenshots/
-    └── dashboard.png
+Raw Olist CSV Data
+        |
+        v
+load_to_duckdb.py
+        |
+        v
+DuckDB Database
+        |
+        +------------------+
+        |                  |
+        v                  v
+    queries.sql       analysis.ipynb
+        |
+        v
+      db.py
+        |
+        v
+     app.py
+        |
+        v
+Streamlit Dashboard
